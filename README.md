@@ -1,6 +1,6 @@
 # SmartPhotoFilter
 
-English | [简体中文](#简体中文)
+English
 
 ## English
 
@@ -158,7 +158,6 @@ filtering, PyQt6 grid review, and py2app packaging for Apple Silicon.
 
 ## 中文
 
-[English](#english) | 简体中文
 
 SmartPhotoFilter 是一款原生 macOS AI 照片筛选工具，面向批量挑图和废片剔除场景。它会扫描照片文件夹，结合计算机视觉信号为每张图片评分，将结果划分为 `保留` / `复核` / `丢弃`，自动剔除高度相似的连拍照片，并导出分类文件夹以及 JSON、CSV、Markdown 报告。
 
