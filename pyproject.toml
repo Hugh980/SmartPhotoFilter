@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-photo-filter"
+version = "0.1.0"
+description = "Native-style macOS photo curation tool with sharpness, expression, and aesthetic scoring."
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.24",
+    "pillow>=10.0",
+    "opencv-python>=4.8",
+    "exifread>=3.0",
+]
+
+[project.optional-dependencies]
+gui = ["PyQt6>=6.5"]
+ml = [
+    "coremltools>=7.0",
+    "pyobjc-framework-Vision>=10.0; platform_system == 'Darwin'",
+    "pyobjc-framework-Quartz>=10.0; platform_system == 'Darwin'",
+]
+train = ["torch>=2.1", "torchvision>=0.16"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "ruff>=0.1"]
+
+[project.scripts]
+smart-photo-filter = "src.main:cli_main"
+
+[tool.setuptools.packages.find]
+include = ["src", "src.*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src --cov-report=term-missing"
